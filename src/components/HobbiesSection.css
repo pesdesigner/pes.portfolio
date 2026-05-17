@@ -1,0 +1,45 @@
+/* Hobbies component */
+.hobby-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  color: var(--ink-main);
+}
+
+.hobby-list li {
+  padding: 0;
+  background: var(--hobby-bg);
+  border: 1px solid var(--hobby-border);
+  border-radius: var(--box-radius);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hobby-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px #0b132b22;
+}
+
+.hobby-link {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 0.95rem;
+  width: 100%;
+  height: 100%;
+  color: var(--ink-main);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hobby-link:hover {
+  color: var(--accent);
+}
+
+.hobby-emoji {
+  font-size: 1.05rem;
+  line-height: 1;
+}

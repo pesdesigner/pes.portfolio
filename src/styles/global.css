@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Theme tokens */
+:root {
+  --prussian-blue: #0b132b;
+  --space-indigo: #1c2541;
+  --dusk-blue: #3a506b;
+  --tropical-teal: #5bc0be;
+  --white: #ffffff;
+
+  --bg-dark: var(--prussian-blue);
+  --bg-mid: var(--space-indigo);
+  --surface: #eef3f8;
+  --surface-2: #dce6f1;
+  --ink-main: #14233a;
+  --ink-soft: var(--dusk-blue);
+  --line: #c5d3e2;
+  --accent: var(--tropical-teal);
+  --accent-deep: var(--space-indigo);
+  --card-bg-from: #f7fbff;
+  --card-bg-to: #e8f0f7;
+  --hobby-bg: #edf4fa;
+  --hobby-border: #c5d3e2;
+  --social-bg: #edf4fa;
+  --social-border: #a6bed2;
+  --social-hover-bg: #dbeaf5;
+  --box-radius: 20px;
+
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark theme overrides */
+[data-theme='dark'] {
+  --surface: #1c2541;
+  --surface-2: #0b132b;
+  --ink-main: #e8f0f7;
+  --ink-soft: #a8c0d6;
+  --line: #2e4460;
+  --accent-deep: var(--tropical-teal);
+  --card-bg-from: #1f2f47;
+  --card-bg-to: #172338;
+  --hobby-bg: #1a2d42;
+  --hobby-border: #2e4460;
+  --social-bg: #1a2d42;
+  --social-border: #2e4460;
+  --social-hover-bg: #223552;
+}
+
+/* Base typography */
+body,
+p,
+li,
+a,
+span,
+button,
+input,
+textarea {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-kicker,
+.btn {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Base layout */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink-main);
+  background:
+    radial-gradient(circle at 15% -15%, #5bc0be55 0%, transparent 42%),
+    radial-gradient(circle at 95% 15%, #3a506b55 0%, transparent 36%),
+    linear-gradient(160deg, var(--bg-dark), var(--bg-mid));
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.site-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 3.2rem;
+}
+
+main {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+/* Shared surface blocks */
+.hero,
+.section,
+.footer {
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--surface) 95%, transparent),
+    color-mix(in srgb, var(--surface-2) 95%, transparent)
+  );
+  border: 1px solid #ffffff22;
+  border-radius: var(--box-radius);
+  box-shadow: 0 18px 45px #08132740;
+  backdrop-filter: blur(6px);
+}
+
+.section {
+  padding: 2rem;
+}
+
+.section-title-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-title-row h2 {
+  margin: 0;
+  font-size: 1.65rem;
+}
+
+.section-title-row p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* Motion */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  animation: riseIn 0.7s ease both;
+}
+
+.section:nth-of-type(1) {
+  animation-delay: 0.1s;
+}
+
+.section:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .section,
+  .footer,
+  .project-card {
+    animation: none;
+  }
+
+  .btn,
+  .theme-toggle,
+  .social-links a,
+  .hobby-list li {
+    transition: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .site-shell {
+    padding: 1rem 0.8rem 2rem;
+  }
+
+  .section {
+    padding: 1.3rem;
+  }
+
+  .section-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
