@@ -1,7 +1,7 @@
 import './Hero.css'
 
-const heroBackgroundImageUrl =
-  'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80'
+const heroBackgroundImageUrl = `${import.meta.env.BASE_URL}images/background-hero.avif`
+const avatarImageUrl = `${import.meta.env.BASE_URL}images/avatar.png`
 
 function Hero({ darkMode, onToggleTheme }) {
   return (
@@ -17,7 +17,7 @@ function Hero({ darkMode, onToggleTheme }) {
         <p className="hero-kicker">Portfolio</p>
         <img
           className="profile-photo"
-          src="https://media.licdn.com/dms/image/v2/C4D03AQFfdmWJgZcOmA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1575203504706?e=1780531200&v=beta&t=aAfLg6T4t0JILeH5XMs1bg9PuvX7CfLLY40PK320HLs"
+          src={avatarImageUrl}
           alt="Foto de Paulo Eduardo"
         />
       </div>
